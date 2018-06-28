@@ -42,14 +42,14 @@ public static defaultProps = new Props()
     private zoomCurrentDistance = 0
 
     // 图片手势处理
-    private imagePanResponder: PanResponderInstance
+    private imagePanResponder!: PanResponderInstance
 
     // 图片视图当前中心的位置
     // private centerX: number
     // private centerY: number
 
     // 上次手按下去的时间
-    private lastTouchStartTime: number
+    private lastTouchStartTime!: number
 
     // 滑动过程中，整体横向过界偏移量
     private horizontalWholeOuterCounter = 0
