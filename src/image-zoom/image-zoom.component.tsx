@@ -101,7 +101,7 @@ public static defaultProps = new Props()
             },
             onStartShouldSetPanResponder: (evt, gestureState) => !this.isScrollMode,
             onPanResponderTerminationRequest: (evt, gestureState) => {
-                const nFinger = evt.nativeEvent.touches.length > 1;
+                const nFinger = (evt.nativeEvent && evt.nativeEvent.touches) ? evt.nativeEvent.touches.length > 1 : false;
                 if(nFinger && !this.isNFingerGesture) {
                     this.isNFingerGesture = true;
                 }
