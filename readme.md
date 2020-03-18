@@ -1,3 +1,7 @@
+# React Native Image Zoom
+
+This is a fork of a fork that works reasonably well with react-native-snap-carousel.  Only forked because the original fork did not publish to npm and I'm not willing to depend on the master branch of someone else's repository.  More info on this code can be found here: https://github.com/archriss/react-native-snap-carousel/issues/264
+
 ## Show Cases
 
 > Zoom while sliding
@@ -13,7 +17,12 @@
 ### Installation
 
 ```bash
-npm i react-native-image-pan-zoom --save
+npm i @synconset/react-native-image-zoom --save
+```
+or
+
+```bash
+yarn add @synconset/react-native-image-zoom
 ```
 
 ### Basic Usage
