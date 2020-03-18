@@ -4,23 +4,11 @@ import {
   LayoutChangeEvent,
   PanResponder,
   PanResponderInstance,
-  Platform,
-  PlatformOSType,
-  StyleSheet,
   View
 } from 'react-native';
 import styles from './image-zoom.style';
 import { ICenterOn, Props, State } from './image-zoom.type';
 
-const isMobile = () => {
-  if (Platform.OS === ('web' as PlatformOSType)) {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  } else {
-    return true;
-  }
-};
-
-//
 export default class ImageViewer extends React.Component<Props, State> {
 public static defaultProps = new Props()
     public state = new State()
