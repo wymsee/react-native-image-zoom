@@ -72,7 +72,7 @@ public static defaultProps = new Props()
 
     isNFingerGesture: boolean = false;
     get isScrollMode() {
-        return !this.isNFingerGesture && this.scale < 1.4;
+        return !this.isNFingerGesture && this.scale <= 1;
     }
 
 
