@@ -1,6 +1,6 @@
 {
   "name": "@synconset/react-native-image-zoom",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "react native image pan zoom",
   "main": "built/index.js",
   "types": "src/index.ts",
