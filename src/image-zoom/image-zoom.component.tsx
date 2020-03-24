@@ -36,9 +36,6 @@ public static defaultProps = new Props()
     // private centerX: number
     // private centerY: number
 
-    // 上次手按下去的时间
-    private lastTouchStartTime!: number
-
     // 滑动过程中，整体横向过界偏移量
     private horizontalWholeOuterCounter = 0
 
@@ -79,7 +76,7 @@ public static defaultProps = new Props()
     public componentWillMount() {
         this.imagePanResponder = PanResponder.create({
             // 要求成为响应者：
-            onMoveShouldSetPanResponderCapture:(evt, gestureState) => {
+            onMoveShouldSetPanResponderCapture:(evt, _gestureState) => {
                 const nFinger = evt.nativeEvent.touches.length > 1;
                 if(nFinger && !this.isNFingerGesture) {
                     this.isNFingerGesture = true;
@@ -87,8 +84,8 @@ public static defaultProps = new Props()
 
                 return !this.isScrollMode;
             },
-            onStartShouldSetPanResponder: (evt, gestureState) => !this.isScrollMode,
-            onPanResponderTerminationRequest: (evt, gestureState) => {
+            onStartShouldSetPanResponder: (_evt, _gestureState) => !this.isScrollMode,
+            onPanResponderTerminationRequest: (evt, _gestureState) => {
                 const nFinger = (evt.nativeEvent && evt.nativeEvent.touches) ? evt.nativeEvent.touches.length > 1 : true;
                 if(nFinger && !this.isNFingerGesture) {
                     this.isNFingerGesture = true;
@@ -97,7 +94,7 @@ public static defaultProps = new Props()
                 return this.isScrollMode;
             },
 
-            onPanResponderGrant: (evt, gestureState) => {
+            onPanResponderGrant: (evt, _gestureState) => {
 
                 const nFinger = evt.nativeEvent.touches.length > 1;
                 if(nFinger && !this.isNFingerGesture) {
@@ -110,7 +107,6 @@ public static defaultProps = new Props()
                 this.zoomLastDistance = null
                 this.horizontalWholeCounter = 0
                 this.verticalWholeCounter = 0
-                this.lastTouchStartTime = new Date().getTime()
                 this.isDoubleClick = false
                 this.isLongPress = false
 
@@ -477,7 +473,7 @@ public static defaultProps = new Props()
                     this.panResponderReleaseResolve()
                 }
             },
-            onPanResponderTerminate: (evt, gestureState) => {
+            onPanResponderTerminate: (_evt, _gestureState) => {
                 this.isNFingerGesture = false;
                 //
             }
