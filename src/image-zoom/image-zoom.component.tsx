@@ -194,15 +194,18 @@ public static defaultProps = new Props()
                         Animated.parallel([
                             Animated.timing(this.animatedScale, {
                                 toValue: this.scale,
-                                duration: 100
+                                duration: 100,
+                                useNativeDriver: true,
                             }),
                             Animated.timing(this.animatedPositionX, {
                                 toValue: this.positionX,
-                                duration: 100
+                                duration: 100,
+                                useNativeDriver: true,
                             }),
                             Animated.timing(this.animatedPositionY, {
                                 toValue: this.positionY,
-                                duration: 100
+                                duration: 100,
+                                useNativeDriver: true,
                             })
                         ]).start()
                     } else {
@@ -486,7 +489,8 @@ public static defaultProps = new Props()
             this.scale = 1
             Animated.timing(this.animatedScale, {
                 toValue: this.scale,
-                duration: 100
+                duration: 100,
+                useNativeDriver: true,
             }).start()
         }
 
@@ -495,7 +499,8 @@ public static defaultProps = new Props()
             this.positionX = 0
             Animated.timing(this.animatedPositionX, {
                 toValue: this.positionX,
-                duration: 100
+                duration: 100,
+                useNativeDriver: true,
             }).start()
         }
 
@@ -504,7 +509,8 @@ public static defaultProps = new Props()
             this.positionY = 0
             Animated.timing(this.animatedPositionY, {
                 toValue: this.positionY,
-                duration: 100
+                duration: 100,
+                useNativeDriver: true,
             }).start()
         }
 
@@ -523,7 +529,8 @@ public static defaultProps = new Props()
             }
             Animated.timing(this.animatedPositionY, {
                 toValue: this.positionY,
-                duration: 100
+                duration: 100,
+                useNativeDriver: true,
             }).start()
         }
 
@@ -533,11 +540,13 @@ public static defaultProps = new Props()
             this.positionY = 0
             Animated.timing(this.animatedPositionX, {
                 toValue: this.positionX,
-                duration: 100
+                duration: 100,
+                useNativeDriver: true,
             }).start()
             Animated.timing(this.animatedPositionY, {
                 toValue: this.positionY,
-                duration: 100
+                duration: 100,
+                useNativeDriver: true,
             }).start()
         }
 
@@ -596,15 +605,18 @@ public static defaultProps = new Props()
         Animated.parallel([
             Animated.timing(this.animatedScale, {
                 toValue: this.scale,
-                duration
+                duration,
+                useNativeDriver: true,
             }),
             Animated.timing(this.animatedPositionX, {
                 toValue: this.positionX,
-                duration
+                duration,
+                useNativeDriver: true,
             }),
             Animated.timing(this.animatedPositionY, {
                 toValue: this.positionY,
-                duration
+                duration,
+                useNativeDriver: true,
             })
         ]).start(() => {
             this.imageDidMove("centerOn")
